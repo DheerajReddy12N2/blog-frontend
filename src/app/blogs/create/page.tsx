@@ -5,9 +5,10 @@ import { useState } from 'react';
 export default function Create() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const API_URL = process.env.NEXT_PUBLIC_API_URL
 
   const handleSubmit = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`, {
+    const res = await fetch(`${API_URL}/blogs`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description }),

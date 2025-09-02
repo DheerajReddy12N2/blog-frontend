@@ -25,7 +25,7 @@ export default function Update() {
       alert("Select a post to update");
       return;
     }
-    const res = await fetch(`http://localhost:3000/blogs/${selectedId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${selectedId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description }),

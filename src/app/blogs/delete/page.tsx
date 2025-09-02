@@ -17,7 +17,7 @@ export default function Delete() {
       alert("Select a post to delete");
       return;
     }
-    await fetch(`http://localhost:3000/blogs/${selectedId}`, { method: 'DELETE' });
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${selectedId}`, { method: 'DELETE' });
     alert("Post Deleted");
     setPosts(posts.filter(post => post._id !== selectedId));
     setSelectedId('');
