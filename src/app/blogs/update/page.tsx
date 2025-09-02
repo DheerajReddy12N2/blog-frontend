@@ -9,7 +9,7 @@ export default function Update() {
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/blogs')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/blogs`)
       .then(res => res.json())
       .then(data => setPosts(data));
   }, []);
